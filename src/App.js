@@ -50,7 +50,7 @@ function App() {
   const [log, setLog] = useState([])
 
   const reloadLog = () => {
-    fetch("https://webpg2-1.herokuapp.com/suzuki.php?type=read", {
+    fetch("https://webpg2-1.herokuapp.com/index.php?type=read", {
       method: "get"
     })
     .then((response) => response.json())
@@ -60,7 +60,7 @@ function App() {
   const writeToDB = (logData) => {
     const data = new FormData()
     data.append("log", logData)
-    fetch("https://webpg2-1.herokuapp.com/suzuki.php?type=write", {
+    fetch("https://webpg2-1.herokuapp.com/index.php?type=write", {
       method: "post",
       body: data
     })
